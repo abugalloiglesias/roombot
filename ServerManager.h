@@ -15,10 +15,6 @@ private:
     void handleStartFull();
     void handleOIStop();
     void handlePowerOff();
-    void handleLeft();
-    void handleRight();
-    void handleForward();
-    void handleBackward();
     void handleDrive();
     void handleStop();
     void handleSong();
