@@ -1,14 +1,14 @@
 #include "Roomba.h"
 #include "ServerManager.h"
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 
 // WIFI
 String ssid = "HACK_THE_MALL2";
 String password = "hackthemall";
 
-int ddPin = D1;
-int rxPin = D5;
-int txPin = D6;
+int ddPin = 4;
+int rxPin = 18;
+int txPin = 19;
 
 Roomba roomba(ddPin, rxPin, txPin);
 ServerManager serverManager(80, &roomba);

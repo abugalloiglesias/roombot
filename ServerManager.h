@@ -3,12 +3,12 @@
 
 #include "Roomba.h"
 #include <Arduino.h>
-#include <ESP8266WebServer.h>
+#include <ESP32WebServer.h>
 
 class ServerManager
 {
 private:
-    ESP8266WebServer server;
+    ESP32WebServer server;
     Roomba *roomba;
 
     void handleStartSafe();
