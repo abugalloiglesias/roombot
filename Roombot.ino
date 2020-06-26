@@ -7,8 +7,6 @@
 String ssid = "HACK_THE_MALL2";
 String password = "hackthemall";
 
-String hostname = "roombot";
-
 int ddPin = D1;
 int rxPin = D5;
 int txPin = D6;
@@ -37,7 +35,7 @@ void setup()
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
-  if (MDNS.begin(hostname)) {
+  if (MDNS.begin("roombot")) {
     Serial.println("MDNS responder started.");
   }
 
