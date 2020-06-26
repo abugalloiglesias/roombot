@@ -1,10 +1,13 @@
 #include "Roomba.h"
 #include "ServerManager.h"
 #include <ESP8266WiFi.h>
+#include <ESP8266mDNS.h>
 
 // WIFI
 String ssid = "HACK_THE_MALL2";
 String password = "hackthemall";
+
+String hostname = "roombot";
 
 int ddPin = D1;
 int rxPin = D5;
@@ -34,6 +37,10 @@ void setup()
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 
+  if (MDNS.begin(hostname)) {
+    Serial.println("MDNS responder started.");
+  }
+
   // Start server
   Serial.println("Starting HTTP server...");
   serverManager.begin();
@@ -43,4 +50,5 @@ void setup()
 void loop()
 {
   serverManager.handleClient();
+  MDNS.update();
 }
